@@ -35,7 +35,10 @@ Machine Translation Data Augmentation Methods Maintaining Part of Speech
   - `load_lm.py`: load the language model developed in `LanguageModel.ipynb`
 
 # data access
-- Download full CSV files from ____
+- Download the full data from torchtext:
+`from torchtext.datasets import IWSLT2017`
+`train_iter, valid_iter, test_iter = IWSLT2017(root='.data', split=('train', 'valid', 'test'), language_pair=('de', 'en'))`
+
 - Run `___.ipynb` to get 10% sample of dataset and save as pikcles
 - Run `build_dataloaders` from `load_data.py` to build the dataloaders used in our training loop and save to pickle files
 - Run `load_pickled_dataloaders` from `load_data.py` to load dataloaders from the pickle files
