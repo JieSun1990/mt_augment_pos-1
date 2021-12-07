@@ -3,10 +3,11 @@ Machine Translation Data Augmentation Methods Maintaining Part of Speech
 
 
 # files and descriptions
-
+- notebooks obtain the data:
+  - `Download_dataset_iwslt2017.ipynb`: download and produce 10% of the data for the paper
 - notebooks to train models:
   - `TrainLSTM.ipynb`: all LSTM methods excluding sequence matching methods
-  - `.`: LSTM sequence matching methods
+  - `similarity_ds_k=2.ipynb` and `similarity_ds_k=10.ipynb`: LSTM sequence matching methods using similarity
   - `TrainTransformer.ipynb`: all Transformer methods
   - `LanguageModel.ipynb`: training the language model used in `LMsample` and `soft` methods
 - other notebooks:
