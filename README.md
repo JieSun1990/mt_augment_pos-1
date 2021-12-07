@@ -33,3 +33,9 @@ Machine Translation Data Augmentation Methods Maintaining Part of Speech
   - `load_data.py`: creating and loading pickled datasets and dataloaders
   - `similarity_load_data.py`: .
   - `load_lm.py`: load the language model developed in `LanguageModel.ipynb`
+
+# data access
+- Download full CSV files from ____
+- Run `___.ipynb` to get 10% sample of dataset and save as pikcles
+- Run `build_dataloaders` from `load_data.py` to build the dataloaders used in our training loop and save to pickle files
+- Run `load_pickled_dataloaders` from `load_data.py` to load dataloaders from the pickle files
