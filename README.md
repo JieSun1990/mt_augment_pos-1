@@ -13,7 +13,7 @@ Machine Translation Data Augmentation Methods Maintaining Part of Speech
 - other notebooks:
   - `BEAM_BLEU.ipynb`: *evaluation*, re-compute BLEU score with beam search, compute POS BLEU score
   - `LM_POS_Experiments.ipynb`: *experiment*, looking at how well the language model matches part of speech
-  - `CustomTransformer.ipynb`: *development*, developing and testing the transformer architecture
+  - `CustomTransformer.ipynb`: *development*, developing and testing the transformer architecture, contains links to transformer resources
 - functions for transformer models:
   - `embeddingTF.py`: `Embedder` and `PositionalEncoding`
   - `sublayersTF.py`: `SublayerConnection` (layer norm & residual connection), `FeedForward`, `attention`, `MultiHeadedAttention`, and `clones` (replicates layers)
