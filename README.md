@@ -15,15 +15,15 @@ Machine Translation Data Augmentation Methods Maintaining Part of Speech
   - `LM_POS_Experiments.ipynb`: *experiment*, looking at how well the language model matches part of speech
   - `CustomTransformer.ipynb`: *development*, developing and testing the transformer architecture
 - functions for transformer models:
-  - `trainTF.py`
-  - `seq2seqTF.py`
-  - `embeddingTF.py`
-  - `layersTF.py`
-  - `sublayersTF.py`
-  - `stacksTF.py`
-  - `encoderTF.py`
-  - `decoderTF.py`
-  - `batchTF.py`
+  - `embeddingTF.py`: `Embedder` and `PositionalEncoding`
+  - `sublayersTF.py`: `SublayerConnection` (layer norm & residual connection), `FeedForward`, `attention`, `MultiHeadedAttention`, and `clones` (replicates layers)
+  - `layersTF.py`: `EncoderLayer` and `DecoderLayer`
+  - `stacksTF.py`: `Encoder` and `Decoder`, which construct the encoder and decoder stacks from the encoder and decoder layers, respectively
+  - `encoderTF.py`: `FullEncoder`, which allows for augmentation to occur in the embedding - positional encoding - encoder structure
+  - `decoderTF.py`: `FullDecoder`, which allows for augmentation to occur in the embedding - positional encoding - decoder structure
+  - `seq2seqTF.py`: `Seq2SeqTF`, which contains the custom encoder and decoders and fully defines the transformer seq2seq model
+  - `batchTF.py`: `BatchTF`, which formats source and target inputs to yield shifted targets, source mask, and target mask (`future_mask` is a helper function)
+  - `trainTF.py`: `train`, which uses `train_epoch` and `val_epoch` to create the training scheme, `greedy_decode`, and `translate_corpus`
 - functions for lstm models:
   - `train.py`
   - `Seq2Seq.py`
