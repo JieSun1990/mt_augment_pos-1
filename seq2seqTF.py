@@ -28,7 +28,6 @@ from decoderTF import *
 ### Seq2Seq Transformer Model ###
 ### Contains both the custom Encoder and Decoder
 ### Takes in all relevant augmentation parameters
-### Outputs 
 class Seq2SeqTF(nn.Module):
   def __init__(self,
                src_vocab_size, 
@@ -40,8 +39,8 @@ class Seq2SeqTF(nn.Module):
                d_ff=2048, 
                h=8, 
                dropout=0.1,
-               augmentation_type = None,  # one of "swap", "drop", "blank", "smooth", "lmsample"
-               gamma = None, 
+               augmentation_type = None,       # one of "swap", "drop", "blank", "smooth", "lmsample"
+               gamma = None,                   # probability that single token is augmented
                k = None,                       # window size for "swap" method
                unk_idx = None,                 # placeholder for "blank" method
                unigram_freq = None,            # to sample from with "smooth" method

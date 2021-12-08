@@ -28,7 +28,8 @@ sys.path.append(PARENT_DIR)
 
 from batchTF import *
 
-
+### Training Epoch ###
+### Augmentation methods applied here
 def train_epoch(model, optimizer, loss_fn, train_dl,padding_idx):
     model.train()
     losses = 0
@@ -51,7 +52,8 @@ def train_epoch(model, optimizer, loss_fn, train_dl,padding_idx):
 
     return losses / len(train_dl)
 
-
+### Validation Epoch ###
+### Augmentation methods are NOT applied here
 def val_epoch(model, loss_fn, val_dl,padding_idx):
     model.eval()
     losses = 0
@@ -70,6 +72,8 @@ def val_epoch(model, loss_fn, val_dl,padding_idx):
 
     return losses / len(val_dl)
 
+### Greedy Decoding ###
+### Used for language generation from output of seq2seq model
 def greedy_decode(model, src, max_len, start_symbol, end_symbol):
   src = src.to(device)
   src_mask = torch.ones(1,1,len(src)).to(device)
@@ -88,6 +92,8 @@ def greedy_decode(model, src, max_len, start_symbol, end_symbol):
       break
   return ys
 
+### Translating Corpus ###
+### Uses greedy decoding
 def translate_corpus(
   vocab: Dict[str, int], 
   test_dl: DataLoader, 
@@ -120,7 +126,10 @@ def translate_corpus(
 import random
 import os
 
-
+### Full Training Scheme ###
+### Uses both train_epoch and val_epoch
+### translate_corpus with greedy_decode occurs to generate validation BLEU in loop
+### returns best model (selected by validation BLEU), train losses across epochs, val losses, bleus, and index (wrt epoch) of best performing model
 def train(model, 
           train_ds, 
           train_dl, 
