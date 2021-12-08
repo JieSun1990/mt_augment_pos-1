@@ -18,12 +18,16 @@ PARENT_DIR = '/content/gdrive/MyDrive/CS287_Research_Project/Jennas_Code/' # for
 import sys
 sys.path.append(PARENT_DIR)
 
+### Decoders-specific mask ###
+### Generates mask for future words in the decoder
 def future_mask(size):
   # Upper triangular masking future words
   attn_shape = (1, size, size)
   future_mask = np.triu(np.ones(attn_shape), k=1).astype('uint8')
   return torch.from_numpy(future_mask) == 0
 
+### Batch object
+### Creates object from source and target that holds right-shifted target values and source and target masks
 class Batch:
     def __init__(self, src, trg=None, pad=0):
       self.src = src
