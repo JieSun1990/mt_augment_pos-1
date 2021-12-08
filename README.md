@@ -36,6 +36,8 @@ Machine Translation Data Augmentation Methods Maintaining Part of Speech
   - `load_lm.py`: load the language model developed in `LanguageModel.ipynb`
 
 # data access
+
+## option 1. download and re-build dataloaders
 - Download the full data from torchtext:
 
 `from torchtext.datasets import IWSLT2017`
@@ -43,5 +45,14 @@ Machine Translation Data Augmentation Methods Maintaining Part of Speech
 `train_iter, valid_iter, test_iter = IWSLT2017(root='.data', split=('train', 'valid', 'test'), language_pair=('de', 'en'))`
 
 - Run `Download_dataset_iwslt2017.ipynb` to get 10% sample of dataset and save as pickles
-- Run `build_dataloaders` from `load_data.py` to build the dataloaders used in our training loop and save to pickle files
-- Run `load_pickled_dataloaders` from `load_data.py` to load dataloaders from the pickle files
+- Run `build_dataloaders()` from `load_data.py` to build the dataloaders used in our LSTM models and save to pickle files
+- - Run `build_dataloaders(batch_size = 32)` from `load_data.py` to build the dataloaders used in our Transformer models and save to pickle files
+- In our code, we use `load_pickled_dataloaders` from `load_data.py` to load dataloaders from the pickle files. You'll need to pass in `PARENT_DIR` as the location of your `data` folder.
+
+## option 2. use our pre-built dataloaders
+- Save download the following directories and save to your own `data` folder
+  - `dataloaders10perc`: used for LSTM models and the LM https://drive.google.com/drive/folders/18K6XpYgTmLZkPtLQw4-8gqUyeAGWPF-u?usp=sharing
+  - `dataloaders10perc_batchsize32`: used for transformer models, larger batch size https://drive.google.com/drive/folders/16_hx53i473FjJfn4sfdLQ4ZTdxDehUBT?usp=sharing
+- In our code, we use `load_pickled_dataloaders` from `load_data.py` to load dataloaders from the pickle files. You'll need to pass in `PARENT_DIR` as the location of your `data` folder.
+
+
