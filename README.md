@@ -25,14 +25,14 @@ Machine Translation Data Augmentation Methods Maintaining Part of Speech
   - `batchTF.py`: `BatchTF`, which formats source and target inputs to yield shifted targets, source mask, and target mask (`future_mask` provides decoder-specific masking)
   - `trainTF.py`: `train`, which uses `train_epoch` and `val_epoch` to create the training scheme, `greedy_decode`, and `translate_corpus`
 - functions for lstm models:
-  - `train.py`
-  - `Seq2Seq.py`
-  - `EncoderLSTM.py`
-  - `DecoderLSTM.py`
+  - `train.py`: training functions for LSTM models
+  - `Seq2Seq.py`: model class
+  - `EncoderLSTM.py`: encoder class, including functions for all augmentations
+  - `DecoderLSTM.py`: decoder class, including functions for seqmix augmentations
 - other functions:
   - `train.py`: training loop and translating corpus
   - `load_data.py`: creating and loading pickled datasets and dataloaders
-  - `similarity_load_data.py`: .
+  - `similarity_load_data.py`
   - `load_lm.py`: load the language model developed in `LanguageModel.ipynb`
 
 # data access
