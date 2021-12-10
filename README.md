@@ -31,7 +31,6 @@ Machine Translation Data Augmentation Methods Maintaining Part of Speech
   - `DecoderLSTM.py`: decoder class, including functions for seqmix augmentations
 - other functions:
   - `load_data.py`: creating and loading pickled datasets and dataloaders
-  - `similarity_load_data.py`
   - `load_lm.py`: load the language model developed in `LanguageModel.ipynb`
 
 # data access
