@@ -265,68 +265,55 @@ def load_pickled_dataloaders(parent_dir = PARENT_DIR, small = True, batch1 = Tru
   
   return mt_train_ds, mt_test_ds, mt_train_dl, mt_test_dl
 
+def load_and_save(parent_dir = PARENT_DIR, small = True, batch1 = True):
+    if small:
+        if batch1:
+            batch_size = 1
+            folder = "dataloaders10perc"
+        else:
+            batch_size = 32
+            folder = "dataloaders10perc_batchsize32"
 
-## Code to load datasets and save small to pickles
-## takes about 5 minutes
+    if small:
+        # Code to load datasets and save small to pickles
+        # takes about 5 minutes
 
-# mt_train_ds, mt_val_ds, mt_test_ds, mt_train_dl, mt_val_dl, mt_test_dl = build_dataloaders()
+        mt_train_ds, mt_val_ds, mt_test_ds, mt_train_dl, mt_val_dl, mt_test_dl = build_dataloaders(small = True, batch_size = batch_size)
 
-# with open(PARENT_DIR+'/data/dataloaders10perc/mt_train_ds.pickle', 'wb') as handle:
-#     pickle.dump(mt_train_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        with open(PARENT_DIR+'/data/' + folder + '/mt_train_ds.pickle', 'wb') as handle:
+            pickle.dump(mt_train_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-# with open(PARENT_DIR+'/data/dataloaders10perc/mt_test_ds.pickle', 'wb') as handle:
-#     pickle.dump(mt_test_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        with open(PARENT_DIR+'/data/' + folder + '/mt_test_ds.pickle', 'wb') as handle:
+            pickle.dump(mt_test_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-# with open(PARENT_DIR+'/data/dataloaders10perc/mt_val_ds.pickle', 'wb') as handle:
-#     pickle.dump(mt_val_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        with open(PARENT_DIR+'/data/' + folder + '/mt_val_ds.pickle', 'wb') as handle:
+            pickle.dump(mt_val_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-# with open(PARENT_DIR+'/data/dataloaders10perc/mt_train_dl.pickle', 'wb') as handle:
-#     pickle.dump(mt_train_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        with open(PARENT_DIR+'/data/' + folder + '/mt_train_dl.pickle', 'wb') as handle:
+            pickle.dump(mt_train_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-# with open(PARENT_DIR+'/data/dataloaders10perc/mt_test_dl.pickle', 'wb') as handle:
-#     pickle.dump(mt_test_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        with open(PARENT_DIR+'/data/' + folder + '/mt_test_dl.pickle', 'wb') as handle:
+            pickle.dump(mt_test_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-# with open(PARENT_DIR+'/data/dataloaders10perc/mt_val_dl.pickle', 'wb') as handle:
-#     pickle.dump(mt_val_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        with open(PARENT_DIR+'/data/' + folder + '/mt_val_dl.pickle', 'wb') as handle:
+            pickle.dump(mt_val_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
+            
+    else:
+        # Code to load datasets and save full to pickles
+        # takes about 35 minutes
 
-## Code to load datasets and save small with batch size 50 to pickles
-## takes about 5 minutes
+        mt_train_ds, mt_test_ds, mt_train_dl, mt_test_dl = build_dataloaders(small = False)
 
-# mt_train_ds, mt_val_ds, mt_test_ds, mt_train_dl, mt_val_dl, mt_test_dl = build_dataloaders(batch_size = 32)
+        with open(PARENT_DIR+'/data/dataloaders_full/mt_train_ds.pickle', 'wb') as handle:
+            pickle.dump(mt_train_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-# with open(PARENT_DIR+'/data/dataloaders10perc_batchsize32/mt_train_ds.pickle', 'wb') as handle:
-#     pickle.dump(mt_train_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        with open(PARENT_DIR+'/data/dataloaders_full/mt_test_ds.pickle', 'wb') as handle:
+            pickle.dump(mt_test_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-# with open(PARENT_DIR+'/data/dataloaders10perc_batchsize32/mt_test_ds.pickle', 'wb') as handle:
-#     pickle.dump(mt_test_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        with open(PARENT_DIR+'/data/dataloaders_full/mt_train_dl.pickle', 'wb') as handle:
+            pickle.dump(mt_train_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-# with open(PARENT_DIR+'/data/dataloaders10perc_batchsize32/mt_val_ds.pickle', 'wb') as handle:
-#     pickle.dump(mt_val_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-# with open(PARENT_DIR+'/data/dataloaders10perc_batchsize32/mt_train_dl.pickle', 'wb') as handle:
-#     pickle.dump(mt_train_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-# with open(PARENT_DIR+'/data/dataloaders10perc_batchsize32/mt_test_dl.pickle', 'wb') as handle:
-#     pickle.dump(mt_test_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-# with open(PARENT_DIR+'/data/dataloaders10perc_batchsize32/mt_val_dl.pickle', 'wb') as handle:
-#     pickle.dump(mt_val_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-## Code to load datasets and save full to pickles
-## takes about 35 minutes
-
-# mt_train_ds, mt_test_ds, mt_train_dl, mt_test_dl = build_dataloaders(small = False)
-
-# with open(PARENT_DIR+'/data/dataloaders_full/mt_train_ds.pickle', 'wb') as handle:
-#     pickle.dump(mt_train_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-# with open(PARENT_DIR+'/data/dataloaders_full/mt_test_ds.pickle', 'wb') as handle:
-#     pickle.dump(mt_test_ds, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-# with open(PARENT_DIR+'/data/dataloaders_full/mt_train_dl.pickle', 'wb') as handle:
-#     pickle.dump(mt_train_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-# with open(PARENT_DIR+'/data/dataloaders_full/mt_test_dl.pickle', 'wb') as handle:
-#     pickle.dump(mt_test_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        with open(PARENT_DIR+'/data/dataloaders_full/mt_test_dl.pickle', 'wb') as handle:
+            pickle.dump(mt_test_dl, handle, protocol=pickle.HIGHEST_PROTOCOL)
   
 
