@@ -47,12 +47,12 @@ Machine Translation Data Augmentation Methods Maintaining Part of Speech
 - Run `Download_dataset_iwslt2017.ipynb` to get 10% sample of dataset and save as pickles
 - Run `load_and_save(batch1 = True)` from `load_data.py` to build the dataloaders used in our LSTM models and save to pickle files
 - Run `load_and_save(batch1 = False)` from `load_data.py` to build the dataloaders used in our Transformer models and save to pickle files
-- In our code, we use `load_pickled_dataloaders` from `load_data.py` to load dataloaders from the pickle files. You'll need to pass in `PARENT_DIR` as the location of your `data` folder.
+- In our code, we use `load_pickled_dataloaders(batch1 = True)` and `load_pickled_dataloaders(batch1 = False)` from `load_data.py` to load dataloaders from the pickle files. You'll need to pass in `PARENT_DIR` as the location of your `data` folder.
 
 ## option 2. use our pre-built dataloaders
 - Save download the following directories and save to your own `data` folder
   - `dataloaders10perc`: used for LSTM models and the LM https://drive.google.com/drive/folders/18K6XpYgTmLZkPtLQw4-8gqUyeAGWPF-u?usp=sharing
   - `dataloaders10perc_batchsize32`: used for transformer models, larger batch size https://drive.google.com/drive/folders/16_hx53i473FjJfn4sfdLQ4ZTdxDehUBT?usp=sharing
-- In our code, we use `load_pickled_dataloaders` from `load_data.py` to load dataloaders from the pickle files. You'll need to pass in `PARENT_DIR` as the location of your `data` folder.
+- In our code, we use `load_pickled_dataloaders(batch1 = True)` and `load_pickled_dataloaders(batch1 = False)` from `load_data.py` to load dataloaders from the pickle files for the LSTM and transformer, respectively. You'll need to pass in `PARENT_DIR` as the location of your `data` folder.
 
 
