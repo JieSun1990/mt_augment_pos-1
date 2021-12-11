@@ -55,24 +55,24 @@ Paper: `NoSyntaxationWithoutRepresentation.pdf`
 - In our code, we use `load_pickled_dataloaders(batch1 = True)` and `load_pickled_dataloaders(batch1 = False)` from `load_data.py` to load dataloaders from the pickle files for the LSTM and transformer, respectively. You'll need to pass in `PARENT_DIR` as the location of your `data` folder.
 
 # Packages
-## Google Colab: Up-to-date packages used as of 12/08/2021
-- `sys`v3.7.12
-- `os`
-- `typing`
-- `tqdm.notebook`
-- `pickle`
-- `timeit`
-- `operator`
-- `collections`
-- `copy`
-- `random`
-- `math`
-- `numpy`
-- `matplotlib.pyplot`
-- `pandas`
-- `torch`
-- `torchtext`
-- `spacy`
-## Huggingface:
-- `transformers`v4.6.0
-- `sentence_transformers`v2.1.0
+- `sys` 3.7.12
+- `tqdm` 4.62.3
+- `numpy` 1.19.5
+- `matplotlib` 3.2.2
+- `pandas` 1.1.5
+- `torch` 1.10.0+cu111
+- `torchtext` 0.11.0
+- `spacy` 2.2.4
+- `transformers` 4.6.0
+- `sentence_transformers` 2.1.0
+- `os` *
+- `typing` *
+- `pickle` *
+- `timeit` *
+- `operator` *
+- `collections` *
+- `copy` *
+- `random` *
+- `math` *
+
+* (Python 3.6.9 Standard Library)
