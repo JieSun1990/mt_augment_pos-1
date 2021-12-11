@@ -54,4 +54,23 @@ Paper: `NoSyntaxationWithoutRepresentation.pdf`
   - `dataloaders10perc_batchsize32`: used for transformer models, larger batch size https://drive.google.com/drive/folders/16_hx53i473FjJfn4sfdLQ4ZTdxDehUBT?usp=sharing
 - In our code, we use `load_pickled_dataloaders(batch1 = True)` and `load_pickled_dataloaders(batch1 = False)` from `load_data.py` to load dataloaders from the pickle files for the LSTM and transformer, respectively. You'll need to pass in `PARENT_DIR` as the location of your `data` folder.
 
-
+# Packages
+- `sys`
+- `os`
+- `typing`
+- `tqdm.notebook`
+- `pickle`
+- `timeit`
+- `operator`
+- `collections`
+- `copy`
+- `random`
+- `math`
+- `numpy`
+- `matplotlib.pyplot`
+- `pandas`
+- `torch`
+- `torchtext`
+- `spacy`
+- `transformers`
+- `sentence_transformers`
