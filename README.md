@@ -1,5 +1,7 @@
 # No Syntaxation Without Representation: Syntactic Considerations for Neural Machine Translation Data Augmentation
 
+Paper: `NoSyntaxationWithoutRepresentation.pdf`
+
 
 # files and descriptions
 - notebooks obtain the data:
