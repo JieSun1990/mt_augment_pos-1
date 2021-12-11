@@ -75,4 +75,4 @@ Paper: `NoSyntaxationWithoutRepresentation.pdf`
 - `random` *
 - `math` *
 
-* (Python 3.6.9 Standard Library)
+\* (Python 3.6.9 Standard Library)
